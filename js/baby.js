@@ -24,8 +24,8 @@ babyObj.prototype.init=function(){
 babyObj.prototype.draw=function(){
 	//ctx1
 	//lerp x,y
-	this.x=lerpDistance(mom.x,this.x,0.98);
-	this.y=lerpDistance(mom.y,this.y,0.98);
+	this.x=lerpDistance(mom.x,this.x,0.99);
+	this.y=lerpDistance(mom.y,this.y,0.99);
 	//lerp angle
 	var deltaY=mom.y-this.y;
 	var deltaX=mom.x-this.x;

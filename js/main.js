@@ -180,7 +180,6 @@ function onMouseMove(e){
 		e.preventDefault();
 	},false);
 	if(!data.gameOver){
-		console.log(e);
 		if (e.touches[0]) {
 			mx=e.touches[0].clientX==undefined?e.touches[0].pageX:e.touches[0].clientX;
 			my=e.touches[0].clientY==undefined?e.touches[0].pageY:e.touches[0].clientY;
