@@ -22,8 +22,8 @@ momObj.prototype.init=function(){
 }
 momObj.prototype.draw=function(){
 	//lerp x,y 让鱼跟着鼠标走，以每次0.9的速率
-	this.x=lerpDistance(mx,this.x,0.99);
-	this.y=lerpDistance(my,this.y,0.99);	
+	this.x=lerpDistance(mx,this.x,0.98);
+	this.y=lerpDistance(my,this.y,0.98);	
 
 	//delta angle每帧计算角度差
 	//Math.atan2(y,x);反正切计算

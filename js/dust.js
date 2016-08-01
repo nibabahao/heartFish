@@ -21,7 +21,6 @@ dustObj.prototype.draw=function(){
 	var l=Math.sin(this.alpha);
 	for(var i=0;i<this.num;i++){
 		var no=this.NO[i];
-		console.log(dustPic[no]);
 		ctx1.drawImage(dustPic[no],this.x[i]+this.amp[i]*l,this.y[i]);
 	}
 }

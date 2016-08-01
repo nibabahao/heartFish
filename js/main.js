@@ -4,6 +4,9 @@ var can2;
 var ctx1;
 var ctx2;
 
+var screenWidth=document.documentElement.clientWidth;
+var screenHeight=document.documentElement.clientHeight;
+
 var canWidth;
 var canHeight;
 
@@ -36,6 +39,9 @@ var dust;
 var dustPic=[];
 
 var num=0;	
+
+
+
 //图片预加载
 function imgLoading(){
 		imgPart("babyEye",2);
@@ -75,13 +81,20 @@ function init(){
 	ctx1=can1.getContext("2d");
 	can2=document.getElementById("canvas2");
 	ctx2=can2.getContext("2d");
+	if(screenWidth>=800){
+		canWidth=can1.width;
+		canHeight=can1.height;
+	}else{
+		can1.width=screenWidth;
+		can1.height=screenHeight;
+		can2.width=screenWidth;
+		can2.height=screenHeight;
+		canWidth=can1.width;
+		canHeight=can1.height;		
+	}
 	//获取鼠标进入canvas1里面的值
-	can1.addEventListener("mousemove",onMouseMove,false);
-
+	can1.addEventListener("touchstart",onMouseMove,false);
 	bgPic.src="./img/background0.png";
-
-	canWidth=can1.width;
-	canHeight=can1.height;
 	//构建海葵对象并初始化所有属性
 	ane=new aneObj();
 	ane.init();
@@ -163,10 +176,14 @@ function gameLoop(){
 }
 
 function onMouseMove(e){
+	document.addEventListener("touchmove",function(e){
+		e.preventDefault();
+	},false);
 	if(!data.gameOver){
-		if (e.offsetX||e.layerX) {
-			mx=e.offsetX==undefined?e.layerX:e.offsetX;
-			my=e.offsetY==undefined?e.layerY:e.offsetY;
+		console.log(e);
+		if (e.touches[0]) {
+			mx=e.touches[0].clientX==undefined?e.touches[0].pageX:e.touches[0].clientX;
+			my=e.touches[0].clientY==undefined?e.touches[0].pageY:e.touches[0].clientY;
 		}
 	}	
 }
