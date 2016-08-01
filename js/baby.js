@@ -54,9 +54,9 @@ babyObj.prototype.draw=function(){
 	}
 	//baby body
 	this.babyBodyTimer+=deltaTime;
-	if(this.babyBodyTimer>300){
+	if(this.babyBodyTimer>500){
 		this.babyBodyCount=this.babyBodyCount+1;
-		this.babyBodyTimer%=300;
+		this.babyBodyTimer%=500;
 		if(this.babyBodyCount>19){
 			this.babyBodyCount=19;
 			//game over

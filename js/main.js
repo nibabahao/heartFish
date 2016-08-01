@@ -89,6 +89,10 @@ function init(){
 		can1.height=screenHeight;
 		can2.width=screenWidth;
 		can2.height=screenHeight;
+		can1.style.width=screenWidth+"px";
+		can1.style.height=screenHeight+"px";
+		can2.style.width=screenWidth+"px";
+		can2.style.height=screenHeight+"px";		
 		canWidth=can1.width;
 		canHeight=can1.height;		
 	}

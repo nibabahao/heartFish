@@ -2,15 +2,11 @@ var momObj=function(){
 	this.x;
 	this.y;
 	this.angle;
-
-
-
 	this.momTailTimer=0;
 	this.momTailCount=0;
 	this.momEyeTimer=0;
 	this.momEyeCount=0;
 	this.momEyeInterval=1000;
-
 	this.momBodyCount=0;
 
 }
