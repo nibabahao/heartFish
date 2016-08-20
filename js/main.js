@@ -41,6 +41,9 @@ var dustPic=[];
 
 var num=0;	
 
+//响应事件
+var type=document.documentElement.clientWidth>800?"click":"touchstart";
+
 
 
 //图片预加载
@@ -55,6 +58,7 @@ function imgLoading(){
 		imgPart("bigTail",8);
 		imgPart("dust",7);
 }
+
 function imgPart(src,len,flag){
 	for(var i=0;i<len;i++){
 		var img=new Image();
@@ -101,7 +105,7 @@ function init(){
 		canHeight=can1.height;		
 	}
 	//获取鼠标进入canvas1里面的值
-	can1.addEventListener("touchstart",onMouseMove,false);
+	can1.addEventListener(type,onMouseMove,false);
 	bgPic.src="./img/background0.png";
 	//构建海葵对象并初始化所有属性
 	ane=new aneObj();
@@ -188,9 +192,12 @@ function onMouseMove(e){
 		e.preventDefault();
 	},false);
 	if(!data.gameOver){
-		if (e.touches[0]) {
+		if (type=="touchstart") {
 			mx=e.touches[0].clientX==undefined?e.touches[0].pageX:e.touches[0].clientX;
 			my=e.touches[0].clientY==undefined?e.touches[0].pageY:e.touches[0].clientY;
+		}else{
+			mx=e.clientX;
+			my=e.clientY;
 		}
 	}	
 }
