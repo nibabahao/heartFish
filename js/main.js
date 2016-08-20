@@ -6,7 +6,8 @@ var ctx2;
 
 var screenWidth=document.documentElement.clientWidth;
 var screenHeight=document.documentElement.clientHeight;
-
+var loading=document.getElementById("loading");
+var allcanvas=document.getElementById("allcanvas");
 var canWidth;
 var canHeight;
 
@@ -61,6 +62,8 @@ function imgPart(src,len,flag){
 		img.onload=function(){
 			num++;
 			if(num==64){
+				loading.style.display="none";
+				allcanvas.removeChild(loading);
 				game();
 			}
 		}
