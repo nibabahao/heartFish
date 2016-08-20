@@ -61,6 +61,7 @@ function imgPart(src,len,flag){
 		img.src="img/"+src+i+".png";
 		img.onload=function(){
 			num++;
+			loading.innerHTML=parseInt((num/64)*100)+"%";
 			if(num==64){
 				loading.style.display="none";
 				allcanvas.removeChild(loading);
